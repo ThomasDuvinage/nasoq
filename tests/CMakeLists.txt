@@ -1,4 +1,4 @@
-include(catch2)
+find_package(Catch2 REQUIRED)
 include(nlohmann_json)
 
 add_executable(NASOQ_Catch2_Tests

@@ -13,6 +13,7 @@ Build-Depends: debhelper (>= 9),
                liblapack-dev,
                liblapacke-dev,
                graphviz
+               catch2
 
 Package: libnasoq-dev
 Section: libdevel
