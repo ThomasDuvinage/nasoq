@@ -9,7 +9,7 @@ target_include_directories(NASOQ_Catch2_Tests PRIVATE
     "${PROJECT_SOURCE_DIR}/include/nasoq/")
 target_link_libraries(NASOQ_Catch2_Tests PRIVATE
     nasoq::eigen_interface
-    Catch2::Catch2WithMain
+    Catch2::Catch2
     nlohmann_json::nlohmann_json
 )
 
