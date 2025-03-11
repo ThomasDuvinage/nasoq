@@ -79,7 +79,8 @@ elseif(NASOQ_USE_BLAS_OpenBLAS)
         set(openblas_WITHOUT_LAPACK ON)
     endif()
 
-    include(openblas)
+    find_package(BLAS REQUIRED)
+    include_directories(${BLAS_INCLUDE_DIRS})
 
     if(openblas_WITHOUT_LAPACK AND NOT NASOQ_USE_CLAPACK)
         message(FATAL_ERROR "cannot build LAPACKE for use with OpenBLAS (maybe you don't have a Fortran compiler?) try setting `NASOQ_USE_CLAPACK` to `ON` to use a C-language alternative.")
@@ -189,7 +190,7 @@ if(NASOQ_USE_BLAS_MKL)
     target_link_libraries(nasoq PRIVATE mkl::mkl)
     target_compile_definitions(nasoq PRIVATE "MKL_BLAS")
 elseif(NASOQ_USE_BLAS_OpenBLAS)
-    target_link_libraries(nasoq PRIVATE OpenBLAS::OpenBLAS)
+    target_link_libraries(nasoq PRIVATE BLAS::BLAS)
     target_compile_definitions(nasoq PRIVATE "OPENBLAS")
 endif()
 

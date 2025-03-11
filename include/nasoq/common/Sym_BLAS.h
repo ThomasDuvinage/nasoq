@@ -20,9 +20,9 @@
 #ifdef NASOQ_USE_CLAPACK
     #include "nasoq/clapacke/clapacke.h"
 #else
-    #include "openblas/lapacke.h"
+    #include "lapacke.h"
 #endif
-    #include "openblas/cblas.h"
+    #include "cblas.h"
    // #endif
 #else
 #include "mkl.h"
