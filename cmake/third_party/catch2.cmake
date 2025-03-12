@@ -20,6 +20,7 @@ FetchContent_Declare(
     catch2
     GIT_REPOSITORY https://github.com/catchorg/Catch2.git
     GIT_TAG v2.13.10
-    GIT_SHALLOW TRUE
 )
 FetchContent_MakeAvailable(catch2)
+
+list(APPEND CMAKE_MODULE_PATH ${catch2_SOURCE_DIR}/contrib)
